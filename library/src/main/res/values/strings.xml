@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">library</string>
+
+    <string name="loading_dialog_text">正在加载…</string>
+</resources>
