@@ -14,5 +14,5 @@ import android.support.v4.content.FileProvider;
  */
 public class LazyFileProvider extends FileProvider {
 
-    public static final String LAZY_FILE_PROVIDER_AUTHORITY = "cn.onlyloveyd.shareapk";
+    public static final String LAZY_FILE_PROVIDER_AUTHORITY = ".cn.onlyloveyd.shareapk";
 }

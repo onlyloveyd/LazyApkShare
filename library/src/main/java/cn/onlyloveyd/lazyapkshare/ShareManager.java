@@ -83,14 +83,16 @@ public class ShareManager {
             @Override
             public void subscribe(ObservableEmitter<Uri> emitter) {
                 try {
-                    packageInfo = packageManager.getPackageInfo(packageName, PackageManager.GET_META_DATA);
+                    packageInfo = packageManager.getPackageInfo(packageName,
+                            PackageManager.GET_META_DATA);
                 } catch (PackageManager.NameNotFoundException e) {
                     e.printStackTrace();
                     throw new IllegalArgumentException("package name does not exist!!!");
                 }
                 AppInfo appInfo =
                         new AppInfo(
-                                packageManager.getApplicationLabel(packageInfo.applicationInfo).toString(),
+                                packageManager.getApplicationLabel(
+                                        packageInfo.applicationInfo).toString(),
                                 packageInfo.packageName,
                                 packageInfo.versionName,
                                 packageInfo.applicationInfo.sourceDir,
@@ -99,7 +101,9 @@ public class ShareManager {
                                 false);
 
                 File initialFile = new File(appInfo.getSource());
-                File targetFile = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/Base/base.apk");
+                File targetFile = new File(
+                        Environment.getExternalStorageDirectory().getAbsolutePath()
+                                + "/Base/base.apk");
                 if (!targetFile.exists()) {
                     targetFile.mkdir();
                 }
@@ -109,7 +113,9 @@ public class ShareManager {
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                         uri =
                                 LazyFileProvider.getUriForFile(
-                                        context, LazyFileProvider.LAZY_FILE_PROVIDER_AUTHORITY, targetFile);
+                                        context,
+                                        packageName + LazyFileProvider.LAZY_FILE_PROVIDER_AUTHORITY,
+                                        targetFile);
                     } else {
                         uri = Uri.fromFile(targetFile);
                     }
