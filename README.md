@@ -1,4 +1,4 @@
-[![](https://www.jitpack.io/v/onlyloveyd/LazyApkShare.svg)](https://www.jitpack.io/#onlyloveyd/LazyApkShare)
+[![](https://jitpack.io/v/onlyloveyd/LazyApkShare.svg)](https://jitpack.io/#onlyloveyd/LazyApkShare)
 # LazyApkShare
 A Simple Realization of Current Application Sharing Function.
 
@@ -16,7 +16,7 @@ allprojects {
 ```groovy
 
 dependencies {
-    implementation 'com.github.onlyloveyd:LazyApkShare:1.0'
+    implementation 'com.github.onlyloveyd:LazyApkShare:1.1'
 }
 ```
 
